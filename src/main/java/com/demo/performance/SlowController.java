@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class SlowController {
 
     @GetMapping
-    public String getDummy() throws InterruptedException {
-        Thread.sleep(5000);
+    public String getDummy() {
+        new BadImplementation().soSlow();
         return "This is a slow endpoint";
     }
 }
